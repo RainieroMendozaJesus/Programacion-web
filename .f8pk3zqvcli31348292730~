@@ -1,0 +1,49 @@
+.blog-card {
+    background-color: $white;
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 25px;
+    transition: border-color 0.2s ease-in-out;
+    .blog-card-top{
+        min-height: 28rem;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        border-radius: 20px ;
+        .inner-div {
+            border-radius: 0px 20px 0px 19px;
+            width: fit-content;
+            padding: 10px 20px;
+            color: $white;
+            background: rgba(18, 72, 56, 0.75);
+        }
+    }
+    @include hover-focus {
+        border: 2px solid map-get($theme-colors, 'secondary');
+        border-radius: 25px;
+        .inner-div {
+            background: rgba(255, 255, 255, 0.90);
+            color: rgba(18, 72, 56, 0.75);;
+        }
+    }
+    .read-more{
+        color: map-get($theme-colors, 'success');
+        transition: color 0.3s ease-in-out;
+        
+        &:hover, &:focus, &:active{
+            color: map-get($theme-colors, 'secondary');
+        }
+    }
+}
+
+a:hover,a:focus {
+    text-decoration: none;
+}

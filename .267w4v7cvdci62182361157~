@@ -1,0 +1,48 @@
+.about-card {
+    position: relative;
+    border-radius: 40px;
+    border: 2px solid map-get($theme-colors, 'warning');
+    background: $white;
+    padding: 24px 35px;
+    margin-top: -50px;
+    z-index: 99;
+    
+    @include media-breakpoint-up(lg) {
+        margin-top: 0;
+        margin-left: -100px;
+        max-width: 480px;
+      }
+}
+
+.badhon{
+    border-radius: 40px;
+    width: 100%;
+    @include media-breakpoint-up(lg){
+        max-width: 478px;
+        max-height: 395px;
+    }
+}
+
+.team-hero-image{
+    border-radius: 40px;
+    border: 1px solid map-get($theme-colors, 'secondary');
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: map-get($font-sizes, 8);
+    span {
+        color: map-get($theme-colors ,'secondary'); 
+        opacity: 60%; 
+        &:hover, &:focus, &:active {
+            opacity: 1;
+        }
+    }
+
+}

@@ -1,0 +1,75 @@
+// /* -------------------------------------------------------------------------- */
+// /*                                 Navbar Top                                 */
+// /* -------------------------------------------------------------------------- */
+
+
+.navbar{
+  background-color: rgba(map-get($theme-colors, 'warning'), 1);
+  position: sticky;
+  top: 0;
+  z-index: 1120;
+  .navbar-collapse{
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1120;
+    @include media-breakpoint-up(md){
+      top: 85px;
+    }
+    @include media-breakpoint-up(lg){
+      background-color: transparent !important;
+      backdrop-filter: none !important;
+      position: static;
+    }
+  }  
+}
+
+
+.submenu {
+  color: map-get($theme-colors,'success') !important;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover, &:focus, &:active{
+    color: map-get($theme-colors, 'secondary') !important;
+  }
+}
+
+
+.navbar-main {
+  a:hover, :focus{
+    text-decoration: none;
+  }
+}
+
+.nav-item{
+  display: inline-block;
+  font-size: 0;
+}
+
+
+.nav-bar-item{
+  display: inline-block;
+  text-align: center;
+  color: #535353 !important;
+  font-size: 20px !important;
+  font-weight: $font-weight-medium;
+  &:hover{
+    color: map-get($theme-colors, 'success') !important;
+    font-weight: bold;
+  }
+
+  &::before{
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+.active {
+  color: map-get($theme-colors, 'success') !important;
+  font-weight: $font-weight-bold !important;
+}

@@ -1,0 +1,44 @@
+mixin HeroSection 
+  section#home.mb-9.mb-lg-10.mb-xxl-11.text-center.text-lg-start.mt-9
+    div 
+      .row.g-4.g-lg-6.g-xl-7.mb-6.mb-lg-7.mb-xl-10.align-items-center
+        .col-12.col-lg-6
+            img(src=`${CWD}assets/img/Hero/man_watering.png`, alt="").img-fluid.w-50.w-lg-100
+        .col-12.col-lg-6
+          h1.fs-5.fs-md-3.fs-xxl-2.text-black.fw-light.mb-4
+            | Be a 
+            span.fw-bold Plant Parent 
+            |today 
+            br.d-sm-none.d-md-block.d-xxl-none 
+            |with 
+            span.text-gradient.fw-bold Aranyak
+          p.fs-8.fs-md-11.fs-xxl-7.text-primary.mb-5.mb-lg-6.mb-xl-7.fw-light
+            | First timer or experienced, we have something for you. 
+            | Take a look at our vast collection of greenery & let us help you transform your household and front/back 
+            | yard.
+            
+          button.btn.btn-gradient.fs-8.mt-1.d-inline-flex
+              span explore catalog
+              span.uil.uil-arrow-right
+      
+      .row.g-4.g-lg-6.g-xl-7.align-items-center
+        .col-12.col-lg-6.order-1.order-lg-0
+          p.fs-8.fs-md-7.fs-xxl-6.text-success.fw-bold.mb-x1.text-capitalize we have got you covered 
+          h1.fs-5.fs-md-3.fs-xxl-2.text-secondary.text-capitalize.fw-light.mb-4
+            | However Popular or 
+            br.d-none.d-md-block.d-lg-none
+            span.fw-bold rare plant 
+            br.d-none.d-xl-block.d-xxl-none
+            br.d-sm-none
+            | it is
+          p.fs-8.fs-md-11.fs-xxl-7.text-primary.mb-5.mb-lg-6.mb-xl-7.fw-light
+            | Our catalog of plants of fruits and flowers; 
+            | for indoors and outdoors; is expanding everyday. 
+
+          button.btn.btn-gradient.fs-8.d-inline-flex
+              span explore catalog
+              span.uil.uil-arrow-right
+
+        .col-12.col-lg-6.order-0.order-lg-1
+          img(src=`${CWD}assets/img/Hero/planting.png`, alt="").img-fluid.w-50.w-lg-100
+        

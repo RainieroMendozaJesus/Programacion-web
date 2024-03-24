@@ -1,0 +1,14 @@
+/*-----------------------------------------------
+|   Hero Section
+-----------------------------------------------*/
+
+.text-gradient {
+    background: linear-gradient(180deg, #86971C 61.46%, #124838 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.text-gradient::selection {
+    background: map-get($theme-colors, 'success' );
+    -webkit-text-fill-color: $white !important;
+}

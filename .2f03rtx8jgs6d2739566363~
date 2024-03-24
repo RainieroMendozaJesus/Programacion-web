@@ -1,0 +1,78 @@
+mixin Footer 
+
+  footer(style=`background-image: url('${CWD}assets/img/illustrations/BOTTOM.png')` class="Footer")
+    .pb-x1.px-3.px-lg-0 
+      .container 
+        .row.align-items-end.g-4.g-sm-6
+          .col-6.col-md-4
+            .mb-6.mb-md-8
+              a(href=`${CWD}`).cursor-pointer
+                img(src=`${CWD}assets/img/logos/Footer_logo.png`, alt="").img-fluid
+            div
+              .mb-2 
+                a(href="#").links.
+                  home
+              .mb-2 
+                a(href="#about").links.
+                  about
+              .mb-2 
+                a(href="#products").links.
+                  catalog
+              .mb-2 
+                a(href="#review").links.
+                  review
+                
+              a(href="#support").links.
+                support
+
+          .col-6.col-md-4
+            .mb-3.mb-md-5 
+              h3(style="color: #FFF0D3;").fs-9.fs-md-8.fw-bold.mb-0 User Account
+            div
+              .mb-2 
+                a(href="#!").links.
+                  sign up
+              .mb-2 
+                a(href="#!").links.
+                  log in 
+              .mb-2 
+                a(href="#!").links.
+                  edit profile
+              .mb-2 
+                a(href="#!").links.
+                  history
+                
+              a(href="#!").links.
+                refund
+
+          .col-12.col-md-4
+            .row.g-4.g-sm-6.g-md-0
+              .col-6.col-md-12.mb-md-7
+                h3(style="color: #FFF0D3;").fs-9.fs-md-8.fw-bold.mb-3 Follow Us At
+                .d-flex.align-items-center 
+                  a(href="#!").social-icon.me-2
+                    span.uil.uil-facebook.fs-8
+                  a(href="#!").social-icon.me-2
+                    span.uil.uil-linkedin.fs-8
+                  a(href="#!").social-icon.me-2
+                    span.uil.uil-youtube.fs-8
+                  a(href="#!").social-icon
+                    span.uil.uil-twitter.fs-8
+              .col-6.col-md-12 
+                .mb-3
+                  p(style="color: #FFF0D3;").fs-9.fs-md-8.fw-bold.lh-nomal.mb-0    Contact 
+                .fs-10.fs-md-9
+                  p.mb-0.text-white.opacity-70  Obito Uchiha
+                  p.mb-0.text-white.opacity-70  Konoha, Leaf Village
+
+    .bg-success.py-2.py-md-3.position-relative.terms-condition
+      .overley-background
+      .container.py-12.text-div.text-md-end
+        a(href="#!" title="F.A.Q").links.ms-md-4   F.A.Q 
+        a(href="#!" title="Cookies Policy").links.ms-3.ms-md-4   Cookies Policy
+        a(href="#!" title="Legal Terms").links.ms-3.ms-md-4   Legal Terms 
+        a(href="#!" title="Privacy Policy").links.ms-3.ms-md-4   Privacy Policy
+                        
+                      
+        
+

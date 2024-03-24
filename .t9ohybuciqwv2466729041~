@@ -1,0 +1,92 @@
+
+
+.btn {
+  --#{$prefix}btn-border-width: var(--#{$prefix}border-width);
+}
+
+
+.btn-gradient {
+  border-radius: 40px;
+  background: linear-gradient(93deg, #85C7B3 -18.71%, #265C4C 117.68%);
+  background-size: 100%;
+  color: $white;
+  font-weight: $font-weight-bold;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 21px;
+  width: 300px;
+  height: 50px;
+  box-shadow: none !important;
+  border: none !important;
+  transition:  all 0.2s ease-in;
+  z-index: 100;
+
+  &::before{
+    border-radius: inherit;
+    background: #FFF;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0; 
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    z-index: -100;
+  }
+
+  &:hover, &:focus, &:active{
+    color: map-get($theme-colors, 'success') !important;
+    border: 1px solid map-get($theme-colors, 'success') !important;
+    outline: 4px solid #85C7B3 !important;
+    outline-offset: 5px;
+  }
+  &:hover::before{
+    opacity: 1;
+  }
+
+  @include media-breakpoint-up(sm){
+    width: 350px;
+  }
+  .arrow-right-alt{
+    display: none;
+  }
+
+}
+
+// disabled btn box shadow
+.btn {
+  &:disabled {
+    @include box-shadow(var(--#{$prefix}btn-box-shadow));
+  }
+}
+
+
+.scroll-to-top{
+  position: fixed;
+  right: 2%;
+  bottom: 5%;
+  padding: 0;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 218, 145, 0.7);
+  border-radius: map-get($border-radiuses, 'circle');
+  transition: background-color 0.2s ease-in;
+  z-index: 1120;
+  
+  span{
+    font-size: 23px;
+  }
+
+  &:hover{
+    background-color: rgba(255, 218, 145, 1);
+  }
+
+}

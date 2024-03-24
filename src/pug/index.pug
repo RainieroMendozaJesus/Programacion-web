@@ -1,0 +1,28 @@
+extends layouts/LayoutTheme
+
+include ./mixins/home/HeroSection
+include ./mixins/home/Counter
+include ./mixins/home/AboutUs
+include ./mixins/home/Products
+include ./mixins/home/Reviews
+include ./mixins/home/Blogs
+include ./mixins/home/Support
+
+prepend styles
+    link(rel="stylesheet", href=`${CWD}vendors/swiper/swiper-bundle.min.css`)
+
+prepend scripts 
+    script(src=`${CWD}vendors/countup/countUp.umd.js`)
+    script(src=`${CWD}vendors/swiper/swiper-bundle.min.js`)
+
+
+append content 
+    .container(data-bs-target="#navbar-top" data-bs-spy="scroll" tabindex="0")
+        +HeroSection
+        +Counter
+        +AboutUs 
+        +Products
+        +Reviews
+        +Blogs
+        +Support
+

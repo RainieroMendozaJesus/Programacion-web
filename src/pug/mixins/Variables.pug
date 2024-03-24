@@ -1,0 +1,26 @@
+append variables
+  - var title = 'Aranyak | Landing Page Template';
+  - var theme = `${name}-${version}`;
+  - var bootstrapVersion = '5.3';
+  - var attrsMain = { id: 'top', class: 'main' };
+  - var attrsLayout = { class: 'bg-white' }
+  - var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+  - var grays = [ 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100 ];
+  - var colorsAll = colors.concat(grays);
+  -
+    var themeColor =  {
+      primary: '#2c7be5',
+      secondary: '#748194',
+      success: '#00d27a',
+      info: '#27bcfd',
+      warning: '#f5803e',
+      danger: '#e63757',
+      light: '#f9fafd',
+      dark: '#0b1727',
+    }
+
+  - var footer = true;
+  - var pathName = (locals.filename || locals.history[0]).split('\\').join('/').split('src/pug/').pop().split('.pug').shift();
+  - var pageTree = pathName.split('/');
+  - var pageName = pathName.split('/').pop();
+  - var CWD = pageTree.slice(1).map(() => '../').join('');

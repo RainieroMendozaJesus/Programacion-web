@@ -1,0 +1,37 @@
+.beginner-guide{
+    line-height: 1.5;
+}
+
+.submit-button{
+    background: map-get($theme-colors, 'success');
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: map-get($border-radiuses, 'circle' ) !important;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid transparent;
+    z-index: 1000 !important;
+    span {
+        display: inline-flex;
+        align-items: center;
+        font-size: 25px;
+        color: $white;
+        &::before{
+            display: inline-flex;
+            align-items: center;
+            line-height: normal;
+        }
+    }
+
+    &:hover, &:active{
+        border: 2px solid map-get($theme-colors, 'success') !important;
+        box-shadow: 0px 0px 0px 2.5px $white, 0px 0px 0px 5px map-get($theme-colors, 'success'), 0px 0px 0px 10px $white, 0px 0px 0px 10.5px map-get($theme-colors, 'success');
+        background: $white !important;
+        span{
+            color: map-get($theme-colors, 'success') !important;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+mixin LayoutContent  
+
+  div()&attributes(attrsLayout)
+
+    block wrapperContent
+      block beforeContent
+
+      .content()&attributes(attrsContent)
+
+        block navbarTop 
+          +Navbar
+
+        block content
+        +ScrollTop
+        +Footer 
+
+      block afterContent

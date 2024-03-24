@@ -1,0 +1,120 @@
+.product-card {
+    border-radius: 22px;
+    margin: 10px 0;
+    height: 100%;
+    border: 2px solid transparent;
+    overflow: hidden !important;
+    transition: all 0.2s ease-in-out;
+
+    .product-card-top{
+        min-height: 29rem;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .add-section {
+        height: fit-content;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding: 10px 20px;
+        background: rgba(255, 217, 145, 0.80);
+
+        @include media-breakpoint-up(md) {
+            justify-content: center;
+            padding: 10px 16px;
+        }
+        @include media-breakpoint-up(xl) {
+            padding: 10px 16px;
+            gap: 50px;
+        }
+
+        a {
+            text-decoration: none;
+            color: map-get($theme-colors, 'success') !important;
+            font-weight: $font-weight-bold;
+            span {
+                font-size: 25px;
+                line-height: 0%;   
+            }
+
+            @include hover-focus {
+                color: map-get($theme-colors, 'secondary') !important;
+            }
+        }
+
+    }
+
+    .product-card-body {
+        background: rgba(255, 217, 145, 0.65);
+        min-height: 210px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: 2px solid map-get($theme-colors, 'secondary' );
+        box-shadow: none;
+        .add-section {
+            background: rgba(255, 255, 255, 0.90);
+        }
+    }
+}
+
+.swiper-container {
+    padding: 0px 10px;
+    margin: 0px -10px;
+}
+
+.slider-nav {
+    .next-button, .prev-button {
+        padding: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 999 ;
+        height: 50px;
+        width: 50px;
+        opacity: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #E2FFF6 !important;
+        border: 5px solid map-get($theme-colors, 'success') !important;
+        border-radius: map-get($border-radiuses, 'circle');
+        font-weight: $font-weight-bold;
+        color: map-get($theme-colors, 'success');
+        transition: opacity 0.3s ease-in-out;
+        
+        span{
+            font-size: 23px;
+        }
+
+        &:hover, &:active {
+            opacity: 1 !important;
+        }
+    }
+    .prev-button {
+        left: -3%;
+
+        @include media-breakpoint-up(lg){
+            left: -2%;
+        }
+    }
+    .next-button {
+        right: -3%;
+
+        @include media-breakpoint-up(lg){
+            right: -2%;
+        }
+    }
+
+}
+

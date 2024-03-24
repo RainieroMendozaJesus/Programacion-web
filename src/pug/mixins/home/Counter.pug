@@ -1,0 +1,26 @@
+mixin Counter 
+  section.mb-9.mb-lg-10.mb-xxl-11 
+    .row.g-4
+      .col-12.col-lg-4.text-center
+        img(src=`${CWD}assets/img/icons/Counter_1.png`, alt="").mb-3
+        h1.text-secondary.fs-4.fs-lg-3.fs-xl-2.counter-delivared(data-countup!={endValue:9124201, autoIncreasing: true} style="font-variant-numeric: lining-nums proportional-nums;") 0
+        p.text-success.fs-7.fs-xl-6.fw-bold.mb-0 
+          | Plants 
+          br.d-none.d-xl-block.d-xxl-none
+          |Delivered
+      .col-12.col-lg-4.text-center
+        img(src=`${CWD}assets/img/icons/Counter_2.png`, alt="").mb-3
+        h1.text-secondary.fs-4.fs-lg-3.fs-xl-2(data-countup!={endValue:36487} style="font-variant-numeric: lining-nums proportional-nums;")  0
+        p.text-success.fs-7.fs-xl-6.fw-bold.mb-0 
+          |Happy 
+          br.d-none.d-xl-block.d-xxl-none
+          |customers 
+      .col-12.col-lg-4.text-center
+        img(src=`${CWD}assets/img/icons/Counter_3.png`, alt="").mb-3
+        h1.text-secondary.fs-4.fs-lg-3.fs-xl-2(data-countup!={endValue:400, suffix:'+'} style="font-variant-numeric: lining-nums proportional-nums;")   0
+        p.text-success.fs-7.fs-xl-6.fw-bold.mb-0 
+          |Growing 
+          br.d-none.d-xl-block.d-xxl-none 
+          |Catalog 
+
+

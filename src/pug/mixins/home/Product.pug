@@ -1,0 +1,15 @@
+mixin Product({imgSrc, productTitle, description})
+	.product-card.swiper-slide
+		.product-card-top(style=`background-image: url('${CWD}${imgSrc}')`)
+			.add-section
+				a(href="#!").fs-10.fs-md-9.d-flex.flex-column.flex-xl-row.align-items-center
+					span.uil.uil-file-heart.me-1.align-middle
+					| add to wishlist 
+				
+				a(href="#!").fs-10.fs-md-9.d-flex.flex-column.flex-xl-row.align-items-center.text-success.fw-bold
+					span.uil.uil-shopping-cart.me-1.align-middle
+					| add to cart
+
+		.d-flex.flex-column.gap-x1.p-x1.pb-5.product-card-body
+			h3.text-success.fw-semi-bold.text-center.line-clamp-1.fs-8.fs-md-11.fs-xxl-7= productTitle 
+			p.text-dark.fs-10.fs-md-9.fs-xl-8.text-capitalize.lh-xl.mb-0.line-clamp-3= description 

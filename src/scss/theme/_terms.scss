@@ -1,0 +1,37 @@
+.terms-condition{
+    .overley-background{
+        position: absolute;
+        background: rgba(0, 0, 0, 0.33);
+        left: 0%;
+        top: 0%;
+        width: 100%;
+        z-index: 1;
+        height: 100%;
+    }
+    
+    .text-div{
+        z-index: 10;
+    }
+
+    .links{
+        color: rgba(255, 255, 255, 0.70);
+        font-size: map-get($font-sizes, 9);
+        font-weight: $font-weight-medium;
+        cursor: pointer;
+        @include media-breakpoint-up(md) {
+            font-size: map-get($font-sizes, 8);
+        }
+        @include hover-focus {
+            color: $white;
+            font-weight: $font-weight-semi-bold;
+        }
+    }
+    
+    .cloud{
+        position: absolute;
+        left: 50%;   
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+}

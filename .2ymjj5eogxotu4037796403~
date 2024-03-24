@@ -1,0 +1,167 @@
+include ./Product
+
+append variables
+
+	- 
+		var products = {
+			new: [
+				{
+					imgSrc: 'assets/img/products/products/1.png', 
+					productTitle: 'Philodendron', 
+					description: "The Philodendron White Princess has been around for some time in private collections. But they have hit the market now in full big potted plants."
+				},
+				{
+					imgSrc: 'assets/img/products/products/2.png', 
+					productTitle: 'Monstera Obliqua Peruvian', 
+					description: "aS it is a small species, Monstera Obliqua is uncommon. Another reason for its scarcity is that it grows slowly and has short selling seasons"
+				},
+				{
+					imgSrc: 'assets/img/products/products/3.png', 
+					productTitle: 'Norfolk Island Pine', 
+					description: "Although a lively addition to your home all year round—the Norfolk Island Pine shines as a live holiday tree during the winter season"
+				},
+				{
+					imgSrc: 'assets/img/products/products/5.png', 
+					productTitle: 'Bromeliad Aechmea Pink', 
+					description: "Featuring colorful, long-lasting blooms, the Bromeliad Aechmea Pink is a unique flowering plant to add a touch of tropics With lasting blooms"
+				},
+				{
+					imgSrc: 'assets/img/products/products/8.png', 
+					productTitle: 'Spider Plant', 
+					description: 'The fast-growing shoots produce little "babies" that you can re-pot for added greenery elsewhere. Just stick to well-lit spots, water weekly. '
+				}
+			],
+			popular: [
+				{
+					imgSrc: 'assets/img/products/products/4.png', 
+					productTitle: 'Snake/Sansevieria', 
+					description: "Sansevierias are succulent plants. they have strong, stiff, succulent leaves that store water. these plants release oxygen in the night"
+				},
+				{
+					imgSrc: 'assets/img/products/products/5.png', 
+					productTitle: 'Bromeliad Aechmea Pink', 
+					description: "Featuring colorful, long-lasting blooms, the Bromeliad Aechmea Pink is a unique flowering plant to add a touch of tropics With lasting blooms"
+				},
+				{
+					imgSrc: 'assets/img/products/products/6.png', 
+					productTitle: 'Parlor Palm', 
+					description: "The parlor palm (Chamaedorea elegans) has long been used as an indoor plant. NASA gave this plant a high purifying score."
+				},
+				{
+					imgSrc: 'assets/img/products/products/2.png', 
+					productTitle: 'Monstera Obliqua Peruvian', 
+					description: "aS it is a small species, Monstera Obliqua is uncommon. Another reason for its scarcity is that it grows slowly and has short selling seasons"
+				},
+				{
+					imgSrc: 'assets/img/products/products/1.png', 
+					productTitle: 'Monstera Obliqua Peruvian', 
+					description: "aS it is a small species, Monstera Obliqua is uncommon. Another reason for its scarcity is that it grows slowly and has short selling seasons"
+				}
+			],
+			easy: [
+				{
+					imgSrc: 'assets/img/products/products/7.png', 
+					productTitle: 'Peace Lily', 
+					description: "If you're prone to overwatering, try Spathiphyllum. With enough light, they'll also produce their spade-shaped flowers throughout the year."
+				},
+				{
+					imgSrc: 'assets/img/products/products/8.png', 
+					productTitle: 'Spider Plant', 
+					description: 'The fast-growing shoots produce little "babies" that you can re-pot for added greenery elsewhere. Just stick to well-lit spots, water weekly. '
+				},
+				{
+					imgSrc: 'assets/img/products/products/9.png', 
+					productTitle: 'Kalanchoe', 
+					description: 'This water-retaining succulent grows colorful, bell-shaped flowers and withstands dry climates and terrible temperature swings.,'
+				},
+				{
+					imgSrc: 'assets/img/products/products/1.png', 
+					productTitle: 'Monstera Obliqua Peruvian', 
+					description: 'aS it is a small species, Monstera Obliqua is uncommon. Another reason for its scarcity is that it grows slowly and has short selling seasons'
+				}
+			]
+		}
+
+mixin Products 
+
+	section#products.mb-9.mb-lg-10.mb-xxl-11.text-center.text-md-start
+		h3.mb-x1.fs-8.fs-md-7.fs-xxl-6.text-success.fw-bold.pt-6 Our Products 
+
+		#slider-1.mb-6.mb-lg-7.mb-xl-10 
+			h1.fs-5.fs-md-3.fs-xxl-2.text-secondary.text-capitalize.fw-light.mb-13.mb-lg-7    
+				span.fw-bold New 
+				| Arrivals
+			.mb-4.mb-lg-0
+				.swiper-theme-container.position-relative
+					.swiper-container.theme-slider(data-swiper!={
+						spaceBetween:32,
+						loop:true,
+						loopedSlides:5,
+						breakpoints:{
+							0:{slidesPerView: 1}, 
+							768:{slidesPerView: 2}, 
+							1024: {slidesPerView: 3}}
+						})
+						.swiper-wrapper
+							each product in products.new 
+								+Product(product)
+					.slider-nav
+						button(data-slider="slider-1").btn.prev-button
+							span.uil.uil-angle-left-b
+						button(data-slider="slider-1").btn.next-button
+							span.uil.uil-angle-right-b
+
+		#slider-2.mb-6.mb-lg-7.mb-xl-10
+			h1.fs-5.fs-md-3.fs-xxl-2.text-secondary.text-capitalize.text-md-end.fw-light.mb-13.mb-lg-7    
+				span.fw-bold Popular
+				br.d-sm-none 
+				| little plants
+			.mb-4.mb-lg-0
+				.swiper-theme-container.position-relative
+					.swiper-container.theme-sliderdiv(data-swiper!= {
+						spaceBetween:32,
+						loop:true,
+						loopedSlides:5,
+						breakpoints:{
+							0:{slidesPerView: 1}, 
+							768:{slidesPerView: 2}, 
+							1024: {slidesPerView: 3}}
+						})
+						.swiper-wrapper
+							each product in products.popular 
+								+Product(product)
+					.slider-nav
+						button(data-slider="slider-2").btn.prev-button
+							span.uil.uil-angle-left-b
+						button(data-slider="slider-2").btn.next-button
+							span.uil.uil-angle-right-b
+
+		#slider-3.mb-6.mb-lg-7.mb-xl-10
+			h1.fs-5.fs-md-3.fs-xxl-2.text-secondary.text-capitalize.fw-light.mb-13.mb-lg-7    
+				span.fw-bold Easy 
+				| to 
+				br.d-sm-none 
+				| care plants
+			.mb-4.mb-lg-0
+				.swiper-theme-container.position-relative
+					.swiper-container.theme-slider(data-swiper!= {
+						spaceBetween:32,
+						loop:true,
+						loopedSlides:5,
+						breakpoints:{
+							0:{slidesPerView: 1}, 
+							768:{slidesPerView: 2}, 
+							1024: {slidesPerView: 3}}
+						})
+						.swiper-wrapper
+							each product in products.easy 
+								+Product(product)
+					.slider-nav
+						button(data-slider="slider-3").btn.prev-button
+							span.uil.uil-angle-left-b
+						button(data-slider="slider-3").btn.next-button
+							span.uil.uil-angle-right-b
+		.d-flex.justify-content-center
+			button.btn.btn-gradient.fs-8.d-inline-flex
+				span see full catalog
+				span.uil.uil-arrow-right

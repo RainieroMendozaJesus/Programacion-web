@@ -1,0 +1,25 @@
+mixin Support 
+
+  section#support.mb-9.mb-lg-10.mb-xxl-11.text-center.text-lg-start.mt-1
+    .row.g-4.g-lg-6.g-xl-7.pt-6
+      .d-none.d-lg-block.col-lg-6.text-center
+        img(src=`${CWD}assets/img/illustrations/women_watering.png`, alt="").img-fluid 
+      .col-12.col-lg-6.d-flex.flex-column.justify-content-center.mt-0
+        p.fs-8.fs-md-7.fs-xxl-6.text-success.fw-bold.my-0.text-capitalize join us 
+        h1.fs-5.fs-lg-4.fs-xl-3.text-secondary.text-capitalize.fw-light.mt-3.mb-4   
+          | Subscribe to 
+          br
+          | our 
+          span.fw-bold Newsletter
+        p.text-success.fs-8.fs-lg-7.text-capitalize.beginner-guide.my-4
+          | Get Our 
+          span.fw-bold Beginners Guide To Plant Parenthood 
+          br.d-none.d-xxl-block
+          | for free 
+
+        form(method="POST" onsubmit="return false;")
+          .input-group.position-relative 
+            input(type="email", name="email" placeholder="your email address").form-control.email-input
+            button(type="submit").btn.shadow-none.submit-button.position-absolute.end-0
+              span.uil.uil-arrow-right
+                                

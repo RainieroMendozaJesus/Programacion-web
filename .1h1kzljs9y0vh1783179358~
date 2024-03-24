@@ -1,0 +1,342 @@
+:root,
+[data-bs-theme="light"] {
+
+  // 
+  // Brand colors
+  // 
+  @each $color, $value in $brand-colors {
+    --#{$prefix}#{$color}: #{$value};
+  }
+
+  //
+  // RGB colors
+  // 
+  @each $color, $value in $grays-rgb {
+    --#{$prefix}gray-#{$color}-rgb: #{$value};
+  }
+
+  @each $color, $value in $brand-colors-rgb {
+    --#{$prefix}#{$color}-rgb: #{$value};
+  }
+
+  @each $color, $value in $grays {
+    $hover-color: if(color-contrast($value) == $color-contrast-light, shade-color($value, $link-shade-percentage), tint-color($value, $link-shade-percentage));
+    --#{$prefix}gray-link-hover-#{$color}: #{RGBA(#{to-rgb($hover-color)}, var(--#{$prefix}link-opacity, 1)) if($enable-important-utilities, !important, null)};
+  }
+
+  // 
+  // Global variables
+  // 
+  --#{$prefix}quaternary-bg: #{$body-quaternary-bg};
+  --#{$prefix}quaternary-bg-rgb: #{to-rgb($body-quaternary-bg)};
+
+  --#{$prefix}emphasis-bg: #{$body-emphasis-bg};
+  --#{$prefix}emphasis-bg-rgb: #{to-rgb($body-emphasis-bg)};
+
+  --#{$prefix}blockquote-footer-color: #{$gray-600};
+
+  --#{$prefix}hr-opacity: 1;
+
+  --#{$prefix}mark-bg: #fcf8e3; // Review
+
+  //
+  // Font family
+  // 
+  --#{$prefix}font-base: #{inspect($font-family-base)};
+
+
+  // 
+  // Border
+  // 
+  --#{$prefix}btn-disabled-border-color: transparent;
+
+  //
+  // Reveal Button
+  //
+  --#{$prefix}btn-reveal-color: #{$gray-600};
+  --#{$prefix}btn-reveal-hover-color: #{$gray-700};
+  --#{$prefix}btn-reveal-focus-bg: #{shade-color($white, 10%)};
+  --#{$prefix}btn-reveal-hover-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1),
+  0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07),
+  0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  --#{$prefix}btn-reveal-focus-border-color: #{shade-color($white, 12.5%)};
+
+  //
+  // Aranyak Button
+  //
+  --#{$prefix}btn-aranyak-background: var(--#{$prefix}quaternary-bg);
+  --#{$prefix}btn-disabled-color: #4d5969;
+  --#{$prefix}btn-aranyak-box-shadow: #{$btn-aranyak-box-shadow};
+  --#{$prefix}btn-aranyak-hover-box-shadow: #{$btn-aranyak-hover-box-shadow};
+
+  --#{$prefix}btn-aranyak-default-color: var(--#{$prefix}gray-800);
+  --#{$prefix}btn-aranyak-default-hover-color: #{shift-color($gray-800, 17%)};
+  --#{$prefix}btn-aranyak-default-active-background: #{shade-color($white, 10%)};
+  --#{$prefix}btn-aranyak-default-active-border: #{shift-color($gray-800, 17%)};
+  --#{$prefix}btn-active-border-color: transparent;
+
+  [class^="btn-aranyak-"].show {
+    --#{$prefix}btn-active-shadow: var(--#{$prefix}btn-aranyak-box-shadow);
+  }
+
+  @each $color, $value in $theme-colors {
+    // 
+    // Aranyak Button
+    // 
+    --#{$prefix}btn-aranyak-#{$color}-color: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-aranyak-#{$color}-hover-color: #{shift-color($value, 17%)};
+    --#{$prefix}btn-aranyak-#{$color}-active-background: #{shift-color($value, -80%)};
+    --#{$prefix}btn-aranyak-#{$color}-active-color: #{shift-color($value, 17%)};
+  }
+
+  // Need To Work
+  --#{$prefix}input-btn-focus-color: #{rgba($component-active-bg, $input-btn-focus-color-opacity)};
+
+  --#{$prefix}btn-link-color: #{$btn-link-color};
+  --#{$prefix}btn-link-hover-color: #{$link-hover-color};
+  --#{$prefix}btn-disabled-color: #{$gray-600};
+
+  // 
+  // Input
+  //
+  --#{$prefix}input-focus-border-color-global: #{tint-color($component-active-bg, 50%)};
+  --#{$prefix}input-placeholder-color-global:  var(--#{$prefix}gray-400);
+  
+  // 
+  // Navbar glass
+  //
+  --#{$prefix}bg-navbar-glass: #{rgba($gray-200, 0.96)};
+
+  // Navbar vertical styles
+  // 
+  // scss-docs-start navbar-vertical-default-variables
+  --#{$prefix}navbar-vertical-default-bg-color: #{$navbar-vertical-default-bg-color};
+  --#{$prefix}navbar-vertical-default-link-color: #{$navbar-vertical-default-link-color};
+  --#{$prefix}navbar-vertical-default-link-hover-color: #{$navbar-vertical-default-link-hover-color};
+  --#{$prefix}navbar-vertical-default-link-active-color: #{$navbar-vertical-default-link-active-color};
+  --#{$prefix}navbar-vertical-default-link-disable-color: #{$navbar-vertical-default-link-disable-color};
+  --#{$prefix}navbar-vertical-default-hr-color: #{$navbar-vertical-default-hr-color};
+  --#{$prefix}navbar-vertical-default-scrollbar-color: #{$navbar-vertical-default-scrollbar-color};
+  --#{$prefix}navbar-vertical-default-label-color: #{$navbar-vertical-default-label-color};
+  // scss-docs-end navbar-vertical-default-variables
+
+  // scss-docs-start navbar-vertical-inverted-variables
+  --#{$prefix}navbar-vertical-inverted-bg-color: #{$navbar-vertical-inverted-bg-color};
+  --#{$prefix}navbar-vertical-inverted-link-color: #{$navbar-vertical-inverted-link-color};
+  --#{$prefix}navbar-vertical-inverted-link-hover-color: #{$navbar-vertical-inverted-link-hover-color};
+  --#{$prefix}navbar-vertical-inverted-link-active-color: #{$navbar-vertical-inverted-link-active-color};
+  --#{$prefix}navbar-vertical-inverted-link-disable-color: #{$navbar-vertical-inverted-link-disable-color};
+  --#{$prefix}navbar-vertical-inverted-hr-color: #{$navbar-vertical-inverted-hr-color};
+  --#{$prefix}navbar-vertical-inverted-scrollbar-color: #{$navbar-vertical-inverted-scrollbar-color};
+  --#{$prefix}navbar-vertical-inverted-label-color: #{$navbar-vertical-inverted-label-color};
+  // scss-docs-end navbar-vertical-inverted-variables
+
+  // scss-docs-start navbar-vertical-vibrant-variables
+  --#{$prefix}navbar-vertical-vibrant-bg-image: #{$navbar-vertical-vibrant-bg-image};
+  --#{$prefix}navbar-vertical-vibrant-link-color: #{$navbar-vertical-vibrant-link-color};
+  --#{$prefix}navbar-vertical-vibrant-link-hover-color: #{$navbar-vertical-vibrant-link-hover-color};
+  --#{$prefix}navbar-vertical-vibrant-link-active-color: #{$navbar-vertical-vibrant-link-active-color};
+  --#{$prefix}navbar-vertical-vibrant-link-disable-color: #{$navbar-vertical-vibrant-link-disable-color};
+  --#{$prefix}navbar-vertical-vibrant-hr-color: #{$navbar-vertical-vibrant-hr-color};
+  --#{$prefix}navbar-vertical-vibrant-scrollbar-color: #{$navbar-vertical-vibrant-scrollbar-color};
+  --#{$prefix}navbar-vertical-vibrant-label-color: #{$navbar-vertical-vibrant-label-color};
+  // scss-docs-end navbar-vertical-vibrant-variables
+
+  // scss-docs-start navbar-vertical-card-variables
+  --#{$prefix}navbar-vertical-card-bg-color: #{$navbar-vertical-card-bg-color};
+  --#{$prefix}navbar-vertical-card-link-color: #{$navbar-vertical-card-link-color};
+  --#{$prefix}navbar-vertical-card-link-hover-color: #{$navbar-vertical-card-link-hover-color};
+  --#{$prefix}navbar-vertical-card-link-active-color: #{$navbar-vertical-card-link-active-color};
+  --#{$prefix}navbar-vertical-card-link-disable-color: #{$navbar-vertical-card-link-disable-color};
+  --#{$prefix}navbar-vertical-card-hr-color: #{$navbar-vertical-card-hr-color};
+  --#{$prefix}navbar-vertical-card-scrollbar-color: #{$navbar-vertical-card-scrollbar-color};
+  --#{$prefix}navbar-vertical-card-label-color: #{$navbar-vertical-card-label-color};
+  // scss-docs-end navbar-vertical-card-variables
+  
+  // 
+  // Avarar 
+  // 
+  --#{$prefix}avatar-status-border-color: var(--#{$prefix}quaternary-bg);
+  --#{$prefix}avatar-name-bg: #{$gray-900};
+  --#{$prefix}avatar-button-bg: var(--#{$prefix}gray-400);
+  --#{$prefix}avatar-button-hover-bg: var(--#{$prefix}gray-500);
+
+  // 
+  // Notification
+  // 
+  --#{$prefix}notification-bg: var(--#{$prefix}emphasis-bg);
+  --#{$prefix}notification-title-bg: #{$gray-100};
+  --#{$prefix}notification-unread-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}notification-unread-hover-bg: #{darken($gray-200, 5%)};
+  --#{$prefix}notification-indicator-border-color: var(--#{$prefix}body-bg);
+
+  // 
+  // Kanban
+  // 
+  --#{$prefix}kanban-bg: #{$gray-100};
+  --#{$prefix}kanban-header-bg: var(--#{$prefix}kanban-bg);
+  --#{$prefix}kanban-item-bg: #{$white};
+  --#{$prefix}kanban-item-color: var(--#{$prefix}gray-900);
+  --#{$prefix}kanban-btn-add-hover-bg: var(--#{$prefix}gray-200);
+  --#{$prefix}kanban-draggable-source-dragging-bg: var(--#{$prefix}body-bg);
+  --#{$prefix}kanban-bg-attachment-bg: var(--#{$prefix}gray-300);
+  --#{$prefix}kanban-footer-color: var(--#{$prefix}gray-600);
+  --#{$prefix}kanban-nav-link-card-details-color: var(--#{$prefix}gray-700);
+  --#{$prefix}kanban-nav-link-card-details-hover-bg: #{$gray-200};
+
+  // 
+  // Gradient Background
+  // 
+  --#{$prefix}bg-shape-bg: #4695ff;
+  --#{$prefix}bg-shape-bg-ltd: #{linear-gradient(-45deg,#4695ff, #1970e2)};
+  --#{$prefix}bg-shape-bg-dtl: #{linear-gradient(-45deg,#1970e2, #4695ff)};
+
+  --#{$prefix}line-chart-gradient: #{linear-gradient(-45deg, #014ba7, #0183d0)};
+  --#{$prefix}card-gradient: #{linear-gradient(-45deg, #1970e2, #4695ff)};
+  --#{$prefix}progress-gradient: #{linear-gradient(-45deg, #1970e2, #4695ff)};
+  --#{$prefix}bg-circle-shape: none;
+  --#{$prefix}bg-circle-shape-bg: #4695ff;
+  --#{$prefix}modal-shape-header: #{linear-gradient(-45deg,#1970e2,#4695ff)};
+  --#{$prefix}modal-shape-header-bg: #4494ff;
+
+  // 
+  // Full Calendar
+  // 
+  --fc-button-bg-color: #{$gray-900};
+  --fc-button-border-color: #{$gray-900};
+  --fc-button-hover-bg-color: #{$dark};
+  --fc-button-hover-border-color: #{$dark};
+  --fc-button-active-bg-color: #{$dark};
+  --fc-button-active-border-color: #{$dark};
+  --fc-button-list-day-cushion: var(--#{$prefix}quaternary-bg);
+
+  // 
+  // Flatpickr
+  // 
+  --#{$prefix}flatpickr-calendar-bg: var(--#{$prefix}quaternary-bg);
+
+  // 
+  // Leaflet map
+  // 
+  --#{$prefix}leaflet-bar-bg: #{$white};
+  --#{$prefix}leaflet-popup-content-wrapper-bg: var(--#{$prefix}quaternary-bg);
+
+  // 
+  // Choices
+  // 
+  --#{$prefix}choices-item-selectable-highlighted-bg: #{$white};
+  --#{$prefix}choices-item-has-no-choices-bg: var(--#{$prefix}quaternary-bg);
+  --#{$prefix}bg-choices-close-button: #{$gray-200};
+
+  // 
+  // Thumbnail
+  // 
+  --#{$prefix}thumbnail-bg-global: #{$white};
+
+  // 
+  // Chat
+  // 
+  --#{$prefix}chat-contact-bg: var(--#{$prefix}emphasis-bg);
+
+  // 
+  // Tinymce
+  //
+  --#{$prefix}tinymce-bg: var(--#{$prefix}quaternary-bg);
+
+  // 
+  // Swiper
+  //
+  --#{$prefix}swiper-nav-bg: rgba(var(--#{$prefix}quaternary-bg-rgb), 0.8);
+
+  // 
+  // Rater
+  //
+  --#{$prefix}star-rating-bg-image: #{url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFdElEQVR4nO2aXWxURRTH/2dut58Imho1SgStuit+vBo0BkgkRjDog+VBiJEXqJhKK21x+7EdUu5u2W1Uqi8Qo4YQY6gQDQlRn9RENGoMD0a7RCzGRCJGBLRF9mOOD+waKHe7e2f23mt0f4/zceY/Z2fmzJm7QI0aNWr8j6EgBu3sHG9oXHC2gxQvJ/CUhbpUPD5wMggtwv8hmZrmn3mHmF8G4XEm6s5R/kinlPP91xKAA7YN2A8CeHRW8eLmrOjwWwsQgAMYqs+xnLGls3O8wW89vjqgp1/eDWC1YyXhxqYFvz/ppx7AZwcIsnrmbMDUK6X0V5NfA/VJuRDgdWWa3Tmds1b5IqiAf97OUReAunLNCOx4RniFL/eALimvrs+KnwDMq6yHWJq0Bz/3VFRxJD8GabgY4iqcPABWvd6puRzPV4CUsnEmK6YA3OCiG1tKRRIJecwrXUU8XwHTGbEe7iYPAJQXYqsXeq4YyEvjUkoxkxXfAbhDo/uFOrYWxeMDv1Rb16V4ugJmctYa6E0eABpyItdZTT1OeLwFDEMa02YpZeWHpwaeOaBncOQhMJYamrnmvMdJUtXOgI0bd4daW0+25S0rAoV7iLiHgWqkuDkChjik9ibl8EmAuAo2/8G1A7ZKea24IMJkcQRAmJkiBIQBtAGwqiluNgScU4w0EU2CkWZSk8ycnleP76WUf2nadCYajbfmrfwDxIWJgiMAhQG06k7AQxSAEwAmiTnNRJMEMWkxpePx/lNzrRpHB7wwOLJcMR+Cm9vbv5cZAK81h1S3lFLNrnQ8BBVjF/4bkweAZgDPnc+IJ5wqS0QBDnsoKBAYdLtTubMDCF95qiYAhMUfOpY7FSqlOgCc9lSRjzDR86MjsS+d6hwdMBaX3zCrlQDOeKrMBwiIpnYMvVSqvuRNMBWXXwPiYQB/eKLMBxgY3mnHRudqM+dVOGkPfsEKjwCYrqoyHyAgnrKHRipoV57CveAwgCZjZT7AwFjKHuqr5Npc8VW4r3/7ShAdAuD7xwuXjCftoa5KcwZXuUDv4MgqYn4XQEhLmscw8+5UPPaMm4TJVTqc2jF0GERrAeRcq/MceqOlnje7zRa10uHege3tBHobgXxdvhIm7DuRjjw9MbE277av1gRS9vAEwE8BqGpurgVhf0ud2qAz+YvdDegb3L4BTK+b2DCBgffO/np9+549m7K6NoweMD795KOj9y9bcRsB95rY0SRTp+qW7drV/aeJEeM9TMzvm9rQg48mEv2/mVoxP8RYLDa2oYWor4oVYwuEu6qgQwOOtLfvN36DrEIY4yXmNrRobGv79hZTI0YOKPwCEVMRurBFxqvPyAGLw+lbEWBuoBCwAwhB7f/i+GS8/YwcwBzY/i8S7AoILgIUMY8EZluAzZegIY2Fc0gbbQdc9DwHFgGKCFZGP4K2AwoxuFGz+xkCehFSNxHzKoCO6uowjQRl/7dXCs0YnCXmVwWH7Evu8T9LKT+Yzoj1BNggLHRl0fAc0ncAiyVuHl8INKEI0aQdOz67rvDRcm9394sToabpLhBHAVxVkV02c4D2e0DfwMi+Cv76CoCPKEU9Y4nYZ5Xa7pHyOpEVwwA2oXzKfmHqWKRF90FEewVUkAMcZ/C2lB076PadbkzKUwCejUblK3kSO0FYM0fzhkXh9M0AptyMUcQkDJY6AE8D2NIcUktS9vABk7+0JBJyMhmPPcYKywEu9cGWQ3nrnO4Y2g5gYN+sogyIU5mQakvasXEpZUbX9mxSidjHzSG+jxjrAPx4eS29afIwor0FWkJq9HzOOsvMq5n5B0vx2OioPKFrrxyFg/ItKeXBmazoAGMFQEea6/MlP3zWqFGjRo0y/A3lxcMNXfCjjAAAAABJRU5ErkJggg==')};
+
+  // 
+  // Wizard
+  //
+  --#{$prefix}theme-wizard-nav-item-circle-bg: var(--#{$prefix}quaternary-bg);
+
+  // 
+  // Card span
+  //
+  --#{$prefix}card-span-img-bg: var(--#{$prefix}quaternary-bg);
+  --#{$prefix}card-span-img-box-shadow: #{$box-shadow-sm};
+  --#{$prefix}card-span-img-hover-box-shadow: #{$box-shadow-lg};
+  
+  // 
+  // Showcase page
+  //
+  --#{$prefix}setting-toggle-shadow: #{0 -7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07)};
+
+  // 
+  // Scrollbar
+  // 
+  --#{$prefix}scrollbar-bg: #{rgba($gray-400, 0.55)};
+  --#{$prefix}simplebar-bg: #{rgba($gray-400, 1)};
+
+  // 
+  // Aranyak pill
+  // 
+  --#{$prefix}nav-pills-aranyak-active-bg-color: var(--#{$prefix}quaternary-bg);
+
+  //
+  // Custom disabled button
+  // 
+  --#{$prefix}btn-disabled-custom-background: #{rgba($light, 0.55)};
+  --#{$prefix}btn-disabled-custom-color: #{rgba($dark, 0.3)};
+
+  // 
+  // Dropdown
+  // 
+  --#{$prefix}dropdown-bg-global: #{$white};
+  --#{$prefix}dropdown-link-hover-color-global: #{darken($gray-900, 5%)};
+  --#{$prefix}dropdown-link-hover-bg-global: #{$gray-100};
+
+  //
+  // Popover
+  //  
+  --#{$prefix}popover-header-bg-global: #{$gray-100};
+
+  --#{$prefix}top-nav-height: #{map_get($spacers, 7)};
+  
+  
+  //
+  // Toast
+  //  
+  --#{$prefix}toast-bg-global: #{rgba($white, .85)};
+  --#{$prefix}toast-header-bg-global: #{rgba($white, .85)};
+
+  // 
+  // List Group
+  // 
+  --#{$prefix}list-group-bg-global: var(--#{$prefix}emphasis-bg);
+
+  // 
+  // Accordion
+  // 
+  --#{$prefix}accordion-btn-color-global: #{$gray-700};
+
+  // 
+  // Alert
+  //
+  --#{$prefix}alert-link-color: #{$primary};
+
+  // 
+  // Table variants
+  // 
+  @each $color, $value in $table-variants {
+    .table-#{$color} {
+      --#{$prefix}table-bg: #{$value};
+      --#{$prefix}table-color: #{color-contrast(opaque($gray-200, $value))};
+      --#{$prefix}table-hover-bg: #{mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-hover-bg-factor))};
+      --#{$prefix}table-hover-color: #{color-contrast(mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-hover-bg-factor)))};
+      --#{$prefix}table-striped-bg: #{mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-striped-bg-factor))};
+      --#{$prefix}table-striped-color: #{color-contrast(mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-striped-bg-factor)))};
+      --#{$prefix}table-active-bg: #{mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-active-bg-factor))};
+      --#{$prefix}table-active-color: #{color-contrast(mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-active-bg-factor)))};
+      --#{$prefix}table-border-color: #{rgba(mix(color-contrast(opaque($gray-200, $value)), $value, percentage($table-border-factor)), 0.05)};
+    }
+  }
+}

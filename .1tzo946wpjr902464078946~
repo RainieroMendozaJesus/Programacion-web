@@ -1,0 +1,30 @@
+extends Layout
+include ../mixins/common/Navbar
+include ../mixins/common/Footer
+include ../mixins/common/ScrollTop
+include ../mixins/layouts/LayoutContent
+include ../mixins/Variables
+
+append headScripts
+  script(src=`${CWD}assets/js/config.js`)
+
+block styles
+  link(rel="preconnect" href="https://fonts.googleapis.com")
+  link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+  link(href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet")
+  link(href=`${CWD}assets/css/theme${ENV === 'PROD'? '.min': ''}.css`, rel='stylesheet' id="style-default")
+  link(href=`${CWD}assets/css/user-rtl${ENV === 'PROD'? '.min': ''}.css`, rel='stylesheet' id="user-style-rtl")
+  link(href=`${CWD}assets/css/user${ENV === 'PROD'? '.min': ''}.css`, rel='stylesheet' id="user-style-default")
+  link(rel="stylesheet", href=`https://unicons.iconscout.com/release/v4.0.8/css/line.css`)
+
+
+prepend scripts
+  script(src=`${CWD}vendors/lodash/lodash.min.js`)
+  script(src=`https://polyfill.io/v3/polyfill.min.js?features=window.scroll`)
+  script(src=`${CWD}vendors/list.js/list.min.js`)
+  
+
+append afterMainContent
+
+block mainContent
+  +LayoutContent

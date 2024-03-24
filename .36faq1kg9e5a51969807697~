@@ -1,0 +1,64 @@
+mixin Blog({imgSrc, type, requiredTime, title, description, link})
+  .blog-card
+    .blog-card-top(style=`background-image: url('${CWD}assets/img/blogs/${imgSrc}')`)
+      .inner-div 
+        p.fw-semi-bold.mb-0= type
+    .d-flex.flex-column.justify-content-between.h-100 
+      div.px-3.px-xl-x1.pt-2
+        span(style="color: #5C5C5C;").mb-0= requiredTime 
+        h2.text-success.fw-semi-bold.text-capitalize.mb-lg-4.fs-8.fs-md-11.fs-xxl-7= title
+      div.px-3.px-xl-x1.pb-2.pt-1
+        p.text-cardText.fs-10.fs-md-9.fs-xl-8.fw-light.lh-xl.mb-2.line-clamp-2= description
+        a(href=`${link}`).fw-bold.fs-9.fs-md-8.mb-0.read-more read more...
+        
+
+
+mixin Blogs
+  - 
+    var blogItems = [
+      {
+        imgSrc: 'blog_1.png',
+        type: 'indoor gardening',
+        requiredTime: '5 mins read',
+        title: '4 Ways to Level Up Your Indoor Gardening Game',
+        description: 'Indoor gardening is not just about maintaining plants but also about composition and arrangement in a ...',
+        link: '#!'
+      },
+      {
+        imgSrc: 'blog_3.png',
+        type: 'Fruit plant',
+        requiredTime: '2 mins read',
+        title: '6 reasons to reconsider where to plant your next fruit tree',
+        description: 'Growing fruit trees indoors means you get to control everything from the light to humidity, right down to ....',
+        link: '#!'
+      }
+      ,
+      {
+        imgSrc: 'blog_2.png',
+        type: 'Cactus gardening',
+        requiredTime: '2 mins read',
+        title: 'Cactus: Some Common Myths and Misconceptions',
+        description: 'Cactus Plants symbolize endurance, persistence, & toughness. Gifting someone a cactus plant means ...',
+        link: '#!'
+      }
+    ]
+  
+
+  section#blogs.mb-9.mb-lg-10.mb-xxl-11
+
+    .row.mb-6.mb-lg-7.mb-xl-10.pt-6
+      h3.mb-3.fs-8.fs-md-7.fs-xxl-6.text-success.fw-bold.text-center.text-lg-start.text-capitalize aryanak blog 
+      h1.fs-5.fs-md-3.fs-xxl-2.text-secondary.text-capitalize.mb-7.mb-lg-7.text-center.text-lg-start    
+        | To Bring more 
+        span.fw-bold Green
+        br
+        | into 
+        span.fw-bold your home
+      each item in blogItems
+        .col-12.col-lg-4.mb-5.mb-lg-0.px-lg-2.px-xxl-3
+          +Blog(item)
+
+    .d-flex.justify-content-center
+      button.btn.btn-gradient.fs-8.d-inline-flex
+        span see all posts
+        span.uil.uil-arrow-right
