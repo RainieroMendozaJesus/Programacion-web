@@ -2,41 +2,14 @@
 <html data-bs-theme="light" lang="es" dir="ltr">
 
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
     <!-- ===============================================-->
     <!--    Document Title-->
     <!-- ===============================================-->
     <title>Librería Informativa</title>
 
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="assets/js/config.js"></script>
-
-
-    <!-- ===============================================-->
-    <!--    Stylesheets-->
-    <!-- ===============================================-->
-    <link rel="stylesheet" href="vendors/swiper/swiper-bundle.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link href="assets/css/theme.css" rel="stylesheet" id="style-default">
-    <link href="assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
-    <link href="assets/css/user.css" rel="stylesheet" id="user-style-default">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <?php
+      include ("templeate/head.php");
+    ?>    
   </head>
 
 
@@ -48,26 +21,11 @@
     <main class="main" id="top">
 
           <!--Navegador-->
-      
-          <nav class="navbar navbar-expand-lg py-1" id="navbar-top" data-navbar-soft-on-scroll="data-navbar-soft-on-scroll">
-            <div class="container"><a class="navbar-brand me-lg-auto cursor-pointer" href=""><img class="w-50 w-md-100 img-fluid" src="assets/img/logos/logo.png" alt="" /></a>
-              <button class="navbar-toggler border-0 pe-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent" data-navbar-collapse="data-navbar-collapse">
-                <div class="container d-lg-flex justify-content-lg-end pe-lg-0 w-lg-100">
-                  <form class="form-inline position-relative w-lg-50 ms-lg-4 ms-xl-9 mt-3 mt-lg-0" onsubmit="return false;">
-                    <input class="search fs-8 bg-transparent form-control" type="search" name="search" placeholder="search plants..." />
-                    <div class="search-icon"> <span class="uil uil-search"></span></div>
-                  </form>
-                  <ul class="navbar-nav mt-2 mt-lg-1 ms-lg-4 ms-xl-8 ms-2xl-9 gap-lg-x1" data-navbar-nav="data-navbar-nav">
-                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#home" title="home">Inicio</a></li>
-                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#about" title="about">Libros</a></li>
-                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="#products" title="catalog">Autores</a></li>
-                    <li class="nav-item"> <a class="nav-link nav-bar-item px-0" href="contacto.php" title="reviews">Contacto</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </nav>
+          <?php
+            include("templeate/Navegador.php");
+          ?>
+
+          <!--Contenido de la Pagina de Inicios-->
           <div class="container" data-bs-target="#navbar-top" data-bs-spy="scroll" tabindex="0">
             <section class="mb-9 mb-lg-10 mb-xxl-11 text-center text-lg-start mt-9" id="home">
               <div>
@@ -273,41 +231,9 @@
 
 
           <!--Pie de Pagina-->
-          <footer class="Footer" style="background-image: url('assets/img/illustrations/BOTTOM.png')">
-            <div class="pb-x1 px-3 px-lg-0">
-              
-              <div class="container">
-                <div class="row align-items-end g-4 g-sm-6">
-                  
-                  <div class="col-6 col-md-4">
-                    <div class="mb-6 mb-md-8"><a class="cursor-pointer" href=""><img class="img-fluid" src="assets/img/logos/Footer_logo.png" alt="" /></a></div>
-                    <div>
-                      <div class="mb-2"> <a class="links" href="#">Inicio</a></div>
-                      <div class="mb-2"> <a class="links" href="#about">Libros</a></div>
-                      <div class="mb-2"> <a class="links" href="#products">Autores</a></div>
-                      <div class="mb-2"> <a class="links" href="contacto.php">Contacto</a></div>
-                    </div>
-                  </div>
-                  
-                  
-                  <div class="col-12 col-md-4">
-                    <div class="row g-4 g-sm-6 g-md-0">
-                      
-                      <div class="col-6 col-md-12 mb-md-7">
-                        <h3 class="fs-9 fs-md-8 fw-bold mb-3" style="color: #FFF0D3;">Siguenos!</h3>
-                        <div class="d-flex align-items-center"> <a class="social-icon me-2" href="#!"><span class="uil uil-facebook fs-8"></span></a><a class="social-icon me-2" href="#!"><span class="uil uil-linkedin fs-8"></span></a><a class="social-icon me-2" href="#!"><span class="uil uil-youtube fs-8"></span></a><a class="social-icon" href="#!"><span class="uil uil-twitter fs-8"></span></a></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div class="bg-success py-2 py-md-3 position-relative terms-condition">
-              <div class="overley-background"></div>
-              <div class="container py-12 text-div text-md-end"><a class="links ms-md-4" href="#!" title="F.A.Q">Preguntas Frecuentes</a><a class="links ms-3 ms-md-4" href="#!" title="Cookies Policy"> Política de Cookies</a><a class="links ms-3 ms-md-4" href="#!" title="Legal Terms"> Terminos y Condiciones </a><a class="links ms-3 ms-md-4" href="#!" title="Privacy Policy">Política de Privacidad</a></div>
-            </div>
-          </footer>
+          <?php
+            include("templeate/Pie_dePagina.php");
+          ?>
         </div>
       </div>
     </main>
