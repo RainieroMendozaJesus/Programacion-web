@@ -9,8 +9,8 @@
                     <div class="mb-6 mb-md-8"><a class="cursor-pointer" href=""><img class="img-fluid" src="assets/img/logos/Footer_logo.png" alt="" /></a></div>
                     <div>
                       <div class="mb-2"> <a class="links" href="index.php">Inicio</a></div>
-                      <div class="mb-2"> <a class="links" href="index.php#products">Libros</a></div>
-                      <div class="mb-2"> <a class="links" href="index.php#slider-2">Autores</a></div>
+                      <div class="mb-2"> <a class="links" href="libros.php">Libros</a></div>
+                      <div class="mb-2"> <a class="links" href="autores.php">Autores</a></div>
                       <div class="mb-2"> <a class="links" href="contacto.php">Contacto</a></div>
                     </div>
                   </div>
